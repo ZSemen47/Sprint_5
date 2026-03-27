@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators():
-    MAIN_PAGE_URL = "https://qa-desk.stand.praktikum-services.ru/"
     ENTRY_AND_REGISTRATION_BUTTON = (By.CSS_SELECTOR, ".buttonSecondary.inButtonText.undefined.inButtonText")
     PLACE_AN_AD_BUTTON = (By.XPATH, "//button[text()='Разместить объявление']")
     EXIT_BUTTON = (By.XPATH, "//button[text()='Выйти']")
@@ -11,7 +10,7 @@ class MainPageLocators():
 
 
 class LoginAndRegistrationLocators():
-    THERE_IS_NO_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Нет аккаунта']")
+    THERE_IS_NO_ACCOUNT_BUTTON = (By.XPATH, "//button[contains(@class, 'buttonSecondary') and contains(text(), 'Нет аккаунта')]")
     ENTER_EMAIL = (By.XPATH, "//input[@name='email']")
     ENTER_PASSWORD = (By.XPATH, "//input[@name='password']")
     REPEAT_PASSWORD = (By.XPATH, "//input[@name='submitPassword']")
@@ -27,18 +26,18 @@ class LoginAndRegistrationLocators():
 
 
 class PlaceAnAddLocators():
-    TO_PLACE_AN_AD_LOG_IN = (By.XPATH, "//h1[text()='Чтобы разместить объявление, авторизуйтесь']")
+    TO_PLACE_AN_AD_LOG_IN = (By.XPATH, "//h1[contains(text(), 'Чтобы разместить объявление, авторизуйтесь')]")
     TITLE = (By.XPATH, "//input[@placeholder='Название']")
     PRODUCT_DESCRIPTION = (By.XPATH, "//textarea[@name='description']")
     COST = (By.XPATH, "//input[@name='price']")
-    DROPDOWN_CITY_BUTTON = (By.XPATH, "/html/body/div/div/div[2]/div/form/div[3]/div[1]/button")
-    DROPDOWN_CITY_SPB = (By.XPATH, "/html/body/div/div/div[2]/div/form/div[3]/div[2]/button[2]/span")
-    DROPDOWN_CATEGORY_BUTTON = (By.XPATH, "/html/body/div/div/div[2]/div/form/div[2]/div[2]/div[1]/button")
-    DROPDOWN_CATEGORY_CAR = (By.XPATH, "/html/body/div/div/div[2]/div/form/div[2]/div[2]/div[2]/button[1]/span")
-    CONDITION_OF_PRODUCT_NEW_BUTTON = (By.XPATH, "//div[@value='Новый']")
-    CONDITION_OF_PRODUCT_USED_BUTTON = (By.XPATH, "/html/body/div/div/div[2]/div/form/fieldset/div/div[2]/div")
-    PUBLISH_BUTTON = (By.XPATH, "/html/body/div/div/div[2]/div/form/button")
-    LIST_OF_ADDS = (By.XPATH, "/html/body/div/div/div[2]/div[4]/div/div[2]")
+    DROPDOWN_CITY_BUTTON = (By.XPATH, "//input[@name='city']/..//button[contains(@class, 'arrowDown')]")
+    DROPDOWN_CITY_SPB = (By.XPATH, "//span[contains(@class, 'dropDownMenu') and contains(text(), 'Санкт-Петербург')]")
+    DROPDOWN_CATEGORY_BUTTON = (By.XPATH, "//input[@name='category']/..//button[contains(@class, 'arrowDown')]")
+    DROPDOWN_CATEGORY_BUTTON_LIST = (By.XPATH, "//div[contains(@class, 'dropDownMenu_options')]")
+    DROPDOWN_CATEGORY_CAR = (By.XPATH, "//span[contains(@class, 'dropDown') and text()='Авто']")
+    CONDITION_OF_PRODUCT_NEW_BUTTON = (By.XPATH, "//label[text()='Новый']/preceding-sibling::div[contains(@class, 'radioUnput_inputActive')]")
+    CONDITION_OF_PRODUCT_USED_BUTTON = (By.XPATH, "//div[contains(@class, 'radioUnput_shell')]//label[text()='Б/У']/preceding-sibling::div[contains(@class, 'radioUnput_inputRegular')]")
+    PUBLISH_BUTTON = (By.XPATH, "//button[@type='submit' and contains(@class, 'buttonPrimary') and text()='Опубликовать']")
+    LIST_OF_ADDS = (By.XPATH, "//h2[text()='Первое объявление ']")
     MY_ADD = (By.CLASS_NAME, "card")
-    #ADDS_LOADED = (By.CSS_SELECTOR, "profilePage_gridAndPaginaton__togPs")
     ADDS_LOADED = (By.CSS_SELECTOR, "profilePage_gridAndPaginaton__togPs")
