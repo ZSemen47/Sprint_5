@@ -33,3 +33,19 @@ class RegistrationOfAccount():
         driver.find_element(*LoginAndRegistrationLocators.ENTER_PASSWORD).send_keys(existing_password)
         driver.find_element(*LoginAndRegistrationLocators.REPEAT_PASSWORD).send_keys(existing_password)
         driver.find_element(*LoginAndRegistrationLocators.CREATE_ACCOUNT_BUTTON).click()
+
+class EmailGeneration():
+    @staticmethod
+    def fake_email():
+        fake = Faker()
+        return fake.email()
+
+    @staticmethod
+    def incorrect_fake_email():
+        fake = Faker()
+        return fake.domain_name()
+
+    @staticmethod
+    def fake_password():
+        fake = Faker()
+        return fake.password()
